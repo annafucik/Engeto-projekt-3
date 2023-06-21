@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Základy */
+h1 {
+  font-size: 60px;
+  padding: 5% 0;
+}
+
+h2 {
+  padding: 0 5%;
+  text-align: center;
+}
+
+a {
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  background-color: #fcf3e6;
+}
+
+/* Home */
+#home {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/home1.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+#home h1,
+#home h2 {
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Menu */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  align-self: flex-end;
+  height: 70px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+nav {
+  margin-right: 30px;
+  justify-content: flex-start;
+}
+
+nav li {
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-icon {
+  margin-right: 30px;
+  display: none;
+}
+
+/* O nás */
+#about-us {
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+#about-us img {
+  width: 100%;
+  height: 30em;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+#about-us h2 {
+  margin: 5% 0;
+  flex: 0;
+}
+
+.info {
+  text-align: center;
+  flex: 1;
+  width: 33%;
+  margin: 0;
+  align-items: baseline;
+  margin-top: auto;
+}
+
+/* Login */
+#login {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+form,
+.registration {
+  width: 100%;
+}
+
+#login p {
+  margin: 1%;
+}
+
+.username,
+.password-one,
+.password-two,
+.registration {
+  margin: 2%;
+}
+
+.password-two {
+  margin-bottom: 1%;
+}
+
+/* Registrace */
+.registration button {
+  background-color: #002e1e;
+  border: none;
+  border-radius: 4px;
+  width: 20%;
+  padding: 1%;
+  margin: 0 auto;
+}
+
+button a {
+  font-size: 16px;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* Formulářové okénko */
+form input {
+  background-color: transparent;
+  border: 3px solid #002e1e;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  outline: none;
+  text-align: center;
+}
+
+/* Validace */
+.valid {
+  color: #00724a;
+}
+
+.invalid {
+  color: #e31300;
+}
+
+/* Odesílací tlačítko */
+form input[type="submit"] {
+  background-color: #002e1e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 1%;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2%;
+  background-color: #002e1e;
+  color: white;
+}
+
+/* go back tlačítko */
+.go-back {
+  color: black;
+  font-size: 300%;
+  display: flex;
+  justify-content: end;
+  position: fixed;
+  width: 100%;
+  bottom: 1%;
+  right: 5%;
+}
+
+/* Dark/light mode */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.dark-light-mode-button {
+  color: white;
+  font-size: 25px;
+}
