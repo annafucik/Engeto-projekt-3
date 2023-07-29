@@ -15,73 +15,83 @@ menuIcon.addEventListener("click", () => {
   }
 });
 
-// zvětšení a zmenšení obrázku po najetí myši
+// About us - img grow/shrink - mouseenter, mouseleave
 const image1 = document.querySelector(".img1");
 const image2 = document.querySelector(".img2");
 const image3 = document.querySelector(".img3");
 
-image1.addEventListener("mouseenter", () => {
-  image1.style.transform = "scale(1.1)";
-});
+const enterMouse = (imageNumber) => {
+  imageNumber.addEventListener("mouseenter", () => {
+    imageNumber.style.transform = "scale(1.1)";
+  });
+};
 
-image1.addEventListener("mouseleave", () => {
-  image1.style.transform = "scale(1)";
-});
+const leaveMouse = (imageNumber) => {
+  imageNumber.addEventListener("mouseleave", () => {
+    imageNumber.style.transform = "scale(1)";
+  });
+};
 
-image2.addEventListener("mouseenter", () => {
-  image2.style.transform = "scale(1.1)";
-});
+enterMouse(image1);
+leaveMouse(image1);
+enterMouse(image2);
+leaveMouse(image2);
+enterMouse(image3);
+leaveMouse(image3);
 
-image2.addEventListener("mouseleave", () => {
-  image2.style.transform = "scale(1)";
-});
+// Registration password validation
 
-image3.addEventListener("mouseenter", () => {
-  image3.style.transform = "scale(1.1)";
-});
+const getInputContent = (input) => {
+  return input.value;
+};
 
-image3.addEventListener("mouseleave", () => {
-  image3.style.transform = "scale(1)";
-});
+const insertContent = (htmlTag, content) => {
+  htmlTag.textContent = content;
+};
 
-// Validace hesel
-const password1 = document.querySelector(".password1");
-const password2 = document.querySelector(".password2");
+// // add/remove class
+const addClass = (htmlTag, className) => {
+  htmlTag.classList.add(className);
+};
+const removeClass = (htmlTag, className) => {
+  htmlTag.classList.remove(className);
+};
+
+// //cleaner
+const htmlTagCleaner = (input1value, input2value, htmlTag) => {
+  if (input1value === "" && input2value === "") {
+    htmlTag.textContent = "";
+  }
+};
+
+const passwordImputs = document.querySelectorAll(".password-input");
 const paragraph = document.querySelector(".result-text");
 
-password1.addEventListener("input", () => {
-  const password1Value = password1.value;
-  const password2Value = password2.value;
+passwordImputs.forEach((oneInput) => {
+  oneInput.addEventListener("input", () => {
+    const password1Value = getInputContent(passwordImputs[0]);
+    const password2Value = getInputContent(passwordImputs[1]);
 
-  if (password1.value === password2.value) {
-    paragraph.textContent = "Hesla jsou shodná.";
-    paragraph.classList.add("valid");
-    paragraph.classList.remove("invalid");
-  } else {
-    paragraph.textContent = "Hesla nejsou shodná.";
-    paragraph.classList.remove("valid");
-    paragraph.classList.add("invalid");
-  }
-  if (password1Value === "" && password2Value === "") {
-    paragraph.textContent = "";
-  }
+    if (password1Value === password2Value) {
+      insertContent(paragraph, "E-maily jsou shodné.");
+      addClass(paragraph, "valid");
+      removeClass(paragraph, "invalid");
+    } else {
+      insertContent(paragraph, "E-maily nejsou shodné.");
+      removeClass(paragraph, "valid");
+      addClass(paragraph, "invalid");
+    }
+    htmlTagCleaner(password1Value, password2Value, paragraph);
+  });
 });
 
-password2.addEventListener("input", () => {
-  const password1Value = password1.value;
-  const password2Value = password2.value;
-
-  if (password1.value === password2.value) {
-    paragraph.textContent = "Hesla jsou shodná.";
-    paragraph.classList.add("valid");
-    paragraph.classList.remove("invalid");
+// Go back arrow
+const arrow = document.querySelector(".go-back");
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 100) {
+    arrow.style.display = "flex";
   } else {
-    paragraph.textContent = "Hesla nejsou shodná.";
-    paragraph.classList.remove("valid");
-    paragraph.classList.add("invalid");
-  }
-  if (password1Value === "" && password2Value === "") {
-    paragraph.textContent = "";
+    arrow.style.display = "none";
   }
 });
 

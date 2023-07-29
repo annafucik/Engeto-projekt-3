@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-/* Základy */
+/* Basics */
 h1 {
   font-size: 60px;
   padding: 5% 0;
@@ -79,12 +79,12 @@ nav li a {
   display: none;
 }
 
-/* O nás */
+/* About us */
 #about-us {
   margin: 5%;
   display: flex;
   flex-direction: row;
-  gap: 0.5em;
+  gap: 1.5em;
 }
 
 #about-us img {
@@ -108,8 +108,8 @@ nav li a {
   margin-top: auto;
 }
 
-/* Login */
-#login {
+/* Registration */
+#registration {
   margin: 5%;
   display: flex;
   flex-direction: column;
@@ -119,18 +119,19 @@ nav li a {
 }
 
 form,
-.registration {
+.login {
   width: 100%;
 }
 
-#login p {
+#registration p,
+.login h2 {
   margin: 1%;
 }
 
 .username,
 .password-one,
 .password-two,
-.registration {
+.login {
   margin: 2%;
 }
 
@@ -138,12 +139,45 @@ form,
   margin-bottom: 1%;
 }
 
-/* Registrace */
-.registration button {
+/* Send button */
+form input[type="submit"] {
+  background-color: #002e1e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 10em;
+  padding: 1%;
+  margin: 0 auto;
+  font-size: 16px;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* Form window */
+form input {
+  background-color: transparent;
+  border: 3px solid #002e1e;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  outline: none;
+  text-align: center;
+}
+
+/* Validation */
+.valid {
+  color: #00724a;
+}
+
+.invalid {
+  color: #e31300;
+}
+
+/* Login */
+.login button {
   background-color: #002e1e;
   border: none;
   border-radius: 4px;
-  width: 20%;
+  width: 10em;
   padding: 1%;
   margin: 0 auto;
 }
@@ -154,34 +188,6 @@ button a {
   font-weight: normal;
 }
 
-/* Formulářové okénko */
-form input {
-  background-color: transparent;
-  border: 3px solid #002e1e;
-  margin-bottom: 10px;
-  padding: 5px 10px;
-  outline: none;
-  text-align: center;
-}
-
-/* Validace */
-.valid {
-  color: #00724a;
-}
-
-.invalid {
-  color: #e31300;
-}
-
-/* Odesílací tlačítko */
-form input[type="submit"] {
-  background-color: #002e1e;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 1%;
-}
-
 /* Footer */
 footer {
   text-align: center;
@@ -190,7 +196,7 @@ footer {
   color: white;
 }
 
-/* go back tlačítko */
+/* Go back arrow */
 .go-back {
   color: black;
   font-size: 300%;
@@ -200,12 +206,14 @@ footer {
   width: 100%;
   bottom: 1%;
   right: 5%;
+  display: none;
 }
 
 /* Dark/light mode */
 .dark-mode {
   background-color: #1a1a1a;
   color: white;
+  opacity: 0.8;
 }
 
 .dark-light-mode-button {
